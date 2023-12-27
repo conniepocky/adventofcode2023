@@ -5,7 +5,7 @@ data = longData.split("\n")
 
 games = []
 
-successfulGames = []
+powers = []
 
 for line in data:
     game = line.split(";")
@@ -21,7 +21,9 @@ for line in data:
 for i in range(0, len(games)):
     currentGame = int(games[i][0].split("Game")[1].strip())
 
-    entireGameWorks = True
+    highestGreen = 0
+    highestRed = 0
+    highestBlue = 0
 
     for f in range(1, len(games[i])):
 
@@ -41,20 +43,13 @@ for i in range(0, len(games)):
 
             print(t, num)
 
-            if t[1] == "red" and num <= 12:
-                works = True
-            elif t[1] == "blue" and num <= 14:
-                works = True
-            elif t[1] == "green" and num <= 13:
-                works = True
-            else:
-                works = False
-                entireGameWorks = False
+            if t[1] == "red" and num > highestRed:
+                highestRed = num
+            elif t[1] == "blue" and num > highestBlue:
+                highestBlue = num
+            elif t[1] == "green" and num > highestGreen:
+                highestGreen = num
+            
+    powers.append(highestRed*highestBlue*highestGreen)
 
-    if entireGameWorks:
-        successfulGames.append(currentGame)
-    
-
-print(sum(successfulGames))
-
-
+print(sum(powers))
