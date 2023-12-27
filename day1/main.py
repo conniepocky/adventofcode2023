@@ -60,7 +60,6 @@ for i in data:
             num = nums[0]+nums[0]
         else:
             num = str(wordNums.index(nums[0]) + 1)+str(wordNums.index(nums[0]) + 1)
-        
 
     print(num)
     
