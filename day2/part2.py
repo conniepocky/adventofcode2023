@@ -1,7 +1,6 @@
 
-file = open("input.txt", "r")
-longData = file.read()
-data = longData.split("\n")
+with open("input.txt", "r") as f:
+  data = f.read().splitlines()
 
 games = []
 
