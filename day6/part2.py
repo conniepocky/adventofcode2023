@@ -1,6 +1,6 @@
 import numpy
 
-with open("practise.txt", "r") as f:
+with open("input.txt", "r") as f:
   data = f.read().splitlines()
 
 data[0] = data[0].replace("Time:", "")
